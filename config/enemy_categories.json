@@ -1,0 +1,183 @@
+{
+  "_comment": "Enemy class name patterns to category mappings for DRG Stats Tracker",
+  "_usage": "Use 'contains' matching on lowercase class names",
+  
+  "categories": {
+    "Dreadnought": {
+      "priority": 1,
+      "patterns": [
+        "dreadnought"
+      ],
+      "displayName": "Dreadnought",
+      "description": "Boss enemies from Elimination missions"
+    },
+    
+    "Glyphid": {
+      "priority": 2,
+      "patterns": [
+        "glyphid"
+      ],
+      "displayName": "Glyphid",
+      "description": "Main bug faction - grunts, praetorians, etc."
+    },
+    
+    "Mactera": {
+      "priority": 3,
+      "patterns": [
+        "mactera"
+      ],
+      "displayName": "Mactera",
+      "description": "Flying enemies - spawns, grabbers, bombers"
+    },
+    
+    "Naedocyte": {
+      "priority": 4,
+      "patterns": [
+        "naedocyte"
+      ],
+      "displayName": "Naedocyte",
+      "description": "Jellyfish-like floating enemies"
+    },
+    
+    "Qronar": {
+      "priority": 5,
+      "patterns": [
+        "qronar",
+        "shellback"
+      ],
+      "displayName": "Q'ronar",
+      "description": "Armored rolling enemies"
+    },
+    
+    "Robot": {
+      "priority": 6,
+      "patterns": [
+        "patrolbot",
+        "patrol_bot",
+        "shredder",
+        "turret",
+        "prospector",
+        "nemesis",
+        "caretaker"
+      ],
+      "displayName": "Robot",
+      "description": "Rival tech enemies"
+    },
+    
+    "Other": {
+      "priority": 99,
+      "patterns": [],
+      "displayName": "Other",
+      "description": "Default fallback for unmatched enemies"
+    }
+  },
+  
+  "knownEnemies": {
+    "_comment": "Reference list of known enemy class names for verification",
+    
+    "glyphid": [
+      "Glyphid_Grunt",
+      "Glyphid_Grunt_Guard",
+      "Glyphid_Grunt_Slasher",
+      "Glyphid_Praetorian",
+      "Glyphid_Praetorian_Normal",
+      "Glyphid_Praetorian_Radioactive",
+      "Glyphid_Oppressor",
+      "Glyphid_Warden",
+      "Glyphid_Menace",
+      "Glyphid_WebSpitter",
+      "Glyphid_AcidSpitter",
+      "Glyphid_Exploder",
+      "Glyphid_Bulk",
+      "Glyphid_Bulk_Crassus",
+      "Glyphid_Swarmer",
+      "Glyphid_BroodNexus",
+      "Glyphid_Stingtail"
+    ],
+    
+    "mactera": [
+      "Mactera_Spawn",
+      "Mactera_Grabber",
+      "Mactera_GooBomber",
+      "Mactera_Brundle",
+      "Mactera_TriJaw",
+      "Mactera_Swarm"
+    ],
+    
+    "naedocyte": [
+      "Naedocyte_Shocker",
+      "Naedocyte_Breeder",
+      "Naedocyte_Hatchling",
+      "Naedocyte_Roe"
+    ],
+    
+    "qronar": [
+      "Qronar_Shellback",
+      "Qronar_Youngling",
+      "Shellback_Adult",
+      "Shellback_Youngling"
+    ],
+    
+    "robot": [
+      "PatrolBot",
+      "Shredder",
+      "BurstTurret",
+      "SniperTurret",
+      "RepulsionTurret",
+      "Prospector",
+      "Prospector_Drone",
+      "Nemesis",
+      "Caretaker"
+    ],
+    
+    "dreadnought": [
+      "Dreadnought_Normal",
+      "Dreadnought_Classic",
+      "Dreadnought_Twin",
+      "Dreadnought_TwinA",
+      "Dreadnought_TwinB",
+      "Dreadnought_Hiveguard",
+      "Dreadnought_Arbalest"
+    ],
+    
+    "other": [
+      "CaveLeech",
+      "Spitballer",
+      "SpitballInfector",
+      "Korlok_TyrantWeed",
+      "Korlok_HealingPod",
+      "Korlok_Sprout",
+      "BETC",
+      "BET_C",
+      "LootBug",
+      "HuuliHoarder",
+      "FesterFlea",
+      "StabberVine",
+      "DeeptoraHoneycomb",
+      "CarnivorousLarva",
+      "RockpoxLarvae",
+      "Lithophage"
+    ]
+  },
+  
+  "categoryOrder": [
+    "Glyphid",
+    "Mactera",
+    "Naedocyte",
+    "Qronar",
+    "Robot",
+    "Dreadnought",
+    "Other"
+  ],
+  
+  "categoryColors": {
+    "_comment": "Optional colors for UI display (hex format)",
+    "Glyphid": "#FF6B35",
+    "Mactera": "#7B68EE",
+    "Naedocyte": "#00CED1",
+    "Qronar": "#DAA520",
+    "Robot": "#C0C0C0",
+    "Dreadnought": "#DC143C",
+    "Other": "#808080"
+  }
+}

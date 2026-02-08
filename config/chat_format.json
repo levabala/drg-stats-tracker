@@ -1,0 +1,84 @@
+{
+  "_comment": "Message formatting templates for DRG Stats Tracker",
+  
+  "templates": {
+    "header": "=== MISSION STATS ===",
+    "footer": "=====================",
+    
+    "playerLine": "[{playerName}]: {kills} kills | {damage} dmg",
+    "categoryLine": "  {categories}",
+    "categoryItem": "{name}: {count}",
+    "categorySeparator": " | ",
+    
+    "noStats": "No stats recorded yet.",
+    "trackingStarted": "Stats tracking active.",
+    "missionComplete": "Mission complete! Final stats:"
+  },
+  
+  "formatting": {
+    "damageDecimals": 0,
+    "useCommasForThousands": true,
+    "maxCategoriesPerLine": 4,
+    "showZeroCategories": false,
+    "sortCategoriesByCount": true
+  },
+  
+  "commands": {
+    "showStats": "/stats",
+    "alternativeCommands": [
+      "/stat",
+      "/score",
+      "/kills"
+    ],
+    "caseSensitive": false
+  },
+  
+  "display": {
+    "autoShowOnMissionEnd": true,
+    "delayAfterMissionEnd": 2.0,
+    "messageDuration": 10.0,
+    "delayBetweenLines": 0.1
+  },
+  
+  "examples": {
+    "_comment": "Example output for reference",
+    
+    "singlePlayer": [
+      "=== MISSION STATS ===",
+      "[Karl]: 45 kills | 12,340 dmg",
+      "  Glyphid: 30 | Mactera: 10 | Robot: 5",
+      "====================="
+    ],
+    
+    "multiPlayer": [
+      "=== MISSION STATS ===",
+      "[Driller]: 45 kills | 12,340 dmg",
+      "  Glyphid: 30 | Mactera: 10 | Robot: 5",
+      "[Scout]: 52 kills | 8,450 dmg",
+      "  Glyphid: 40 | Mactera: 12",
+      "[Gunner]: 67 kills | 18,920 dmg",
+      "  Glyphid: 45 | Robot: 15 | Dreadnought: 7",
+      "[Engineer]: 38 kills | 9,870 dmg",
+      "  Glyphid: 25 | Naedocyte: 8 | Other: 5",
+      "====================="
+    ],
+    
+    "missionEnd": [
+      "Mission complete! Final stats:",
+      "=== MISSION STATS ===",
+      "[Karl]: 45 kills | 12,340 dmg",
+      "  Glyphid: 30 | Mactera: 10 | Robot: 5",
+      "====================="
+    ]
+  },
+  
+  "localization": {
+    "_comment": "For future localization support",
+    "en": {
+      "kills": "kills",
+      "damage": "dmg",
+      "header": "MISSION STATS",
+      "noStats": "No stats recorded yet."
+    }
+  }
+}
