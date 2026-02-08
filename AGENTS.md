@@ -277,37 +277,78 @@ On /stats command or mission end:
 
 ## CURRENT STATUS
 
-**Last Updated:** 2026-02-08 20:50 UTC
+**Last Updated:** 2026-02-08 21:15 UTC
 
 ### Completed
 - ✅ Project repository structure created
 - ✅ Complete documentation written
 - ✅ AGENTS.md created with workflow rules
 - ✅ Visual Studio 2019+ installed (user completed)
-- ✅ Unreal Engine 4.27.2 installed (user completed)
+- ✅ Unreal Engine 4.27.2 installed at `D:\unreal\UE_4.27` ✅
 - ✅ FSD-Template cloned to `D:\projects\FSD-Template`
 - ✅ Header-Dumps cloned to `D:\projects\Header-Dumps`
+- ✅ Visual Studio project files generated (`FSD.sln` created)
+- ✅ UE4 Editor launched with FSD-Template project
+- ✅ Comprehensive blueprint implementation guide created (`docs/BLUEPRINT_GUIDE.md`)
+- ✅ Quick reference card created (`QUICKSTART.md`)
 
 ### In Progress
-- ⏳ FSD-Template build (awaiting user manual steps)
-  - Need to generate Visual Studio project files
-  - Need to compile in UE4 (shaders)
-  - Need to build in Visual Studio
+- ⏳ UE4 Editor compiling shaders in background (~30-60 min expected)
+- ⏳ User creating blueprints manually in UE4 Editor
 
-### Next Steps (Manual - User Action Required)
-1. **Generate VS Project:** Right-click `FSD.uproject` → "Generate Visual Studio project files"
-2. **Open & Compile UE4:** Double-click `FSD.uproject` → Wait for shader compilation (~30-60 min)
-3. **Build in VS:** Open `FSD.sln` → Build Solution (Ctrl+Shift+B)
-4. **Create Mod Folder:** In UE4 Content Browser → Create `ModStatsTracker` folder
-5. **Begin Implementation:** Follow `docs/IMPLEMENTATION.md` Phase 1
+### Next Steps (User Action Required - Blueprint Creation in UE4)
+**Follow `QUICKSTART.md` or `docs/BLUEPRINT_GUIDE.md`:**
+
+1. **Verify UE4 Editor opened** (should be running now)
+2. **Create folder structure** in Content Browser:
+   - `Content/ModStatsTracker/Blueprints/`
+   - `Content/ModStatsTracker/Data/`
+   - `Content/ModStatsTracker/UI/`
+3. **Create data structures:**
+   - `ST_EnemyCategory` enum (7 categories)
+   - `ST_PlayerData` struct (6 fields)
+4. **Create entry point actors:**
+   - `InitCave` blueprint
+   - `InitSpacerig` blueprint
+5. **Create core tracker:**
+   - `ST_Main` blueprint with functions
+6. **Implement event hooks** (experimental - requires testing)
+7. **Test in Play-In-Editor (PIE)**
 
 ### Blockers
-- None currently - waiting on user to complete manual UE4 setup steps
+- None - awaiting user to manually create blueprints in UE4 Editor
 
-### Recent Findings (2026-02-08)
-- **UE4 Version:** Confirmed 4.27.2 is available and installed
-- **Repository Locations:** All repositories successfully cloned to `D:\projects\`
-- **Project Structure:** Documentation repo separate from FSD-Template (intentional design)
+### Recent Findings (2026-02-08 Session 2)
+
+**Environment Setup Discoveries:**
+1. **Pre-compiled Binaries:** FSD-Template includes pre-built DLLs (`UE4Editor-FSD.dll`, `UE4Editor-FSDEngine.dll`)
+   - No compilation prompts needed on first open
+   - Project ready to use immediately after shader compilation
+   
+2. **UE4 Installation Path:** Located at `D:\unreal\UE_4.27` (not default Epic Games location)
+   - Registry key confirmed: `HKLM\SOFTWARE\EpicGames\Unreal Engine\4.27`
+   
+3. **VS Project Generation:** Successfully automated via UnrealBuildTool.exe
+   - Command: `UnrealBuildTool.exe -projectfiles -project="..." -game -engine -progress`
+   - Generated `FSD.sln` + IntelliSense data
+   
+4. **Visual Studio Error Was Misleading:** User attempted to open .uproject in VS directly
+   - Correct workflow: Open .uproject in UE4 first, then use generated .sln for C++ editing
+   - For blueprint-only mods, VS not required for daily workflow
+
+5. **Blueprint Implementation Must Be Manual:** Cannot automate blueprint creation via CLI
+   - UE4 blueprints are binary `.uasset` files requiring editor GUI
+   - Created comprehensive guides instead: `BLUEPRINT_GUIDE.md` (46KB detailed walkthrough)
+
+**FSD API Research Needed:**
+- Event delegates for kill/damage tracking are undocumented
+- Will require experimentation or community consultation
+- Fallback: Tick-based health monitoring (less efficient but functional)
+
+**Documentation Created This Session:**
+- `docs/BLUEPRINT_GUIDE.md` - Complete node-by-node implementation instructions
+- `QUICKSTART.md` - Quick reference for immediate blueprint creation
+- Updated `AGENTS.md` - This section
 
 ---
 
